@@ -1,0 +1,30 @@
+# Function to reverse words
+def reverse_words(s):
+  
+    # Create a stack and push all
+    # words one by one
+    stack = []
+    word = ""
+    
+    # Traverse the string and split words
+    for char in s:
+        if char != ' ':
+            word += char
+            
+        # If we see a space, push the
+        # previously seen word into the stack
+        elif word:
+            stack.append(word)
+            word = ""
+    
+    # Last word remaining, add it to stack
+    if word:
+        stack.append(word)
+    
+    # Now print from top to bottom of the stack
+    while stack:
+        print(stack.pop(), end=" ")
+
+# Input string
+string = "  geeks for all"
+reverse_words(string)
